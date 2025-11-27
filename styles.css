@@ -1,0 +1,646 @@
+/* Reset and box sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Theme variables for easy customization */
+:root {
+  /* Updated colour palette: one bold tone and two light tones */
+  --primary-color: #8b5d33; /* rich warm brown for headings and accents */
+  --secondary-color: #bfa58a; /* complementary taupe for hover and secondary elements */
+  --background-color: #f7f3eb; /* light parchment background */
+  --secondary-bg: #f4ede3; /* secondary light background for form sections */
+  --accent-bg: #ffffff; /* white boxes for cards */
+  --text-color: #323232; /* dark grey for legibility */
+  --accent-color: var(--primary-color);
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  /* Subtle texture background using a pastel watercolour gradient */
+  background-image: url('images/pastel-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Font helper classes */
+.caveat {
+  font-family: 'Caveat', cursive;
+}
+.lobster {
+  font-family: 'Lobster', sans-serif;
+}
+.pacifico {
+  font-family: 'Pacifico', cursive;
+}
+.tiny5 {
+  font-family: 'Tiny5', sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Great Vibes font for couple names and special headings */
+.great-vibes {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+  padding: 120px 20px 100px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Hero background: a combination of a dark overlay and the couple photo */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+/* Title and names styling */
+/* Hero texts updated to use Google fonts */
+.invitation-title {
+  font-family: 'Tiny5', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #f9f6f1;
+}
+.couple-names {
+  /* Font is set via the great-vibes class; sizing and color defined here */
+  font-size: 4.2rem;
+  margin-bottom: 8px;
+  color: #fff8f1;
+}
+.wedding-date {
+  font-family: 'Lobster', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  color: #e8d8c5;
+}
+
+/* Music control ring and button */
+.music-control {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+.music-ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+}
+.music-ring text {
+  fill: #e8d8c5;
+  font-size: 6px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.music-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+}
+.music-button:focus {
+  outline: none;
+}
+
+/* Language selector positioning in hero */
+.language-select {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+}
+.language-select select {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--secondary-color);
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Decorative lily inside hero */
+/* The decorative lily was removed in the updated design */
+
+/* Section wrapper */
+/* Section wrapper */
+.section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: var(--background-color);
+}
+
+.section-title {
+  font-family: 'Lobster', sans-serif;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.invite-text {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Invitation section typography */
+.invite-text p.poem {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+.invite-text p.address {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+.invite-text p.invitation-message {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.couple-inline-names {
+  display: inline-block;
+  margin: 6px 0;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.invite-text strong {
+  color: var(--primary-color);
+}
+
+/* Countdown timer */
+.countdown-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+.countdown-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+.countdown-item {
+  background: var(--accent-bg);
+  padding: 20px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  min-width: 80px;
+}
+.countdown-item .number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+.countdown-item .label {
+  font-size: 0.9rem;
+  color: #777;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+}
+
+/* Photos */
+.photos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.photos img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Map section */
+.venue-address {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+.map-container {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Calendar section */
+.calendar-section {
+  background-color: var(--background-color);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+.calendar-header {
+  margin-bottom: 20px;
+}
+.calendar-title {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+.calendar-date {
+  font-size: 1.3rem;
+  margin-top: 8px;
+  color: var(--text-color);
+}
+.calendar-table {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+.calendar-table th,
+.calendar-table td {
+  padding: 8px 10px;
+  text-align: center;
+  width: calc(100% / 7);
+  color: var(--text-color);
+}
+.calendar-table thead th {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.calendar-table td {
+  border-radius: 4px;
+}
+.calendar-table td:hover {
+  background-color: var(--secondary-bg);
+}
+/* Heart highlight for the wedding date */
+.calendar-table .highlight-date {
+  position: relative;
+  font-weight: bold;
+  color: var(--primary-color);
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-table .highlight-date span {
+  position: relative;
+  z-index: 2; /* number above the heart */
+}
+
+.calendar-table .highlight-date::before {
+  content: "\2764"; /* Unicode heart symbol */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.6rem;
+  color: var(--secondary-color);
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+}
+/* Timeline section */
+.timeline {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.timeline-event {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+.timeline-time {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.timeline-desc {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+/* RSVP form */
+/* RSVP section background */
+.rsvp-section {
+  background-color: var(--secondary-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Details section: host and dress code */
+.details-section {
+  background-color: var(--background-color);
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.details-title {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+.host-name {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+.dress-code {
+  margin-bottom: 20px;
+}
+.dress-title {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+.dress-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+.dress-list li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Style for dress code icons */
+.dress-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.join-message {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+.rsvp-instructions {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+.rsvp {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+.rsvp h2 {
+  font-family: 'Lobster', sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.form-group input[type='text'],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: var(--text-color);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+.radio-group label {
+  font-weight: normal;
+  font-size: 1rem;
+}
+.number-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.number-input button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--accent-bg);
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.number-input button:hover {
+  background-color: var(--secondary-bg);
+}
+.number-input input {
+  width: 60px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  background-color: #fff;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+.submit {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.submit:hover {
+  background-color: var(--secondary-color);
+}
+
+/* ------------------------------------------------------------------ */
+/* Scroll-triggered animations
+   Elements with the `.animate-item` class will start out hidden and
+   translated downwards. When they receive the `.visible` class (added
+   via IntersectionObserver in script.js), they will fade in and move
+   into place over a longer duration for a gentle Disney/Pixar–style
+   reveal. */
+.animate-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.animate-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
+/* Footer styling */
+.footer-section {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--secondary-bg);
+  font-family: 'Caveat', cursive;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 20px 80px;
+  }
+  .couple-names {
+    font-size: 3rem;
+  }
+  .countdown {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .countdown-item {
+    width: 100%;
+  }
+}
+
+/* ------------------------------------------------------ */
+/* Animations inspired by Disney/Pixar style
+   These animations gently fade and slide elements into view on load.
+*/
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Assign animations to key elements */
+/* Hero animations slowed down for a softer effect */
+.hero .invitation-title {
+  animation: fadeInDown 1.5s ease-out both;
+}
+
+.hero .couple-names {
+  animation: pop 1.5s ease-out 0.5s both;
+}
+
+.hero .wedding-date {
+  animation: fadeInUp 1.5s ease-out 1s both;
+}
+
+/* Disable automatic animations on sections below the hero. These elements
+   will instead use the IntersectionObserver to trigger a transition when
+   scrolled into view. */
+.invite-section .poem,
+.invite-section .address,
+.invite-section .invitation-message,
+.calendar-section .calendar-title,
+.calendar-section .calendar-date,
+.calendar-section .calendar-table,
+.details-section .details-title,
+.details-section .dress-title,
+.details-section .host-name,
+.details-section .dress-list li,
+.details-section .join-message,
+.rsvp-section .rsvp h2,
+.rsvp-section .rsvp-instructions,
+.rsvp-section form {
+  animation: none;
+}

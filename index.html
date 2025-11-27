@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jamshidbek &amp; Kakhrabo – Үйлену тойға шақыру</title>
+    <!-- Google Fonts for elegant typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Great+Vibes&family=Lobster&family=Pacifico&family=Tiny5&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Hero section with names, audio and background image -->
+    <header class="hero">
+      <!-- Language selector for multilingual support -->
+      <div class="language-select">
+        <select id="langSelect" aria-label="Select language">
+          <option value="kk">Қазақша</option>
+          <option value="uz">Oʼzbek</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+      <!-- Music control: circular ring with “Музыка” text and play/pause button -->
+      <div class="music-control">
+        <svg viewBox="0 0 100 100" class="music-ring" aria-hidden="true">
+          <defs>
+            <path
+              id="circlePath"
+              d="M50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
+            />
+          </defs>
+          <text class="music-text">
+            <textPath xlink:href="#circlePath" startOffset="0">
+              Музыка • Музыка • Музыка • Музыка • Музыка • Музыка •
+            </textPath>
+          </text>
+        </svg>
+        <button type="button" id="musicToggle" class="music-button" aria-label="Play music">
+          ▶
+        </button>
+      </div>
+      <div class="hero-content">
+        <p class="invitation-title" data-i18n="invitationTitle">Үйлену тойға шақыру</p>
+        <h1 class="couple-names great-vibes" data-i18n="coupleNames">Жамшидбек <br /> &amp; <br />Кахрабо</h1>
+        <p class="wedding-date" data-i18n="weddingDate">24 қаңтар&nbsp;2026, сағат&nbsp;19:00</p>
+      </div>
+    </header>
+
+    <!-- Hidden audio element; plays your chosen Miras Zhugunusov song -->
+    <!-- The audio file is stored locally in the audio folder; replace with your own if needed. -->
+    <audio id="backgroundMusic" src="audio/song.mp3" loop></audio>
+
+    <!-- Invitation message section -->
+    <section class="section invite-section">
+      <div class="invite-text">
+        <!-- Poem lines in handwritten style -->
+        <p class="poem caveat animate-item" data-i18n="poem">
+          Артқа тастап балауса бала шақты,<br />
+          Біз де тіктік жас отау, жаңа ошақты.<br />
+          Әке – шеше жолына қадам бастық,<br />
+          Жалғау үшін бүгін мен болашақты.
+        </p>
+        <!-- Address to relatives and friends -->
+        <p class="address tiny5 animate-item" data-i18n="address">
+          Құрметті ағайын-туыс, бауырлар, нағашы-жиен, бөлелер, құда-жекжат,
+          дос-жарандар, көршілер мен әріптестер!
+        </p>
+        <!-- Invitation message highlighting the couple's names -->
+        <p class="invitation-message animate-item" data-i18n="invitationMessage">
+          Сіз(дер)ді балаларымыз
+          <br />
+          <span class="couple-inline-names great-vibes">Жамшидбек &amp; Кахрабо</span>
+          <br />
+          үйлену тойына жайылған ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!
+        </p>
+
+      </div>
+
+      <!-- Countdown timer -->
+      <div class="countdown-wrapper">
+        <h2 class="countdown-title lobster" data-i18n="countdownTitle">Тойға дейін:</h2>
+        <div class="countdown" id="countdown">
+          <div class="countdown-item">
+            <span class="number" id="days">0</span>
+            <span class="label">күн</span>
+          </div>
+          <div class="countdown-item">
+            <span class="number" id="hours">0</span>
+            <span class="label">сағат</span>
+          </div>
+          <div class="countdown-item">
+            <span class="number" id="minutes">0</span>
+            <span class="label">минут</span>
+          </div>
+          <div class="countdown-item">
+            <span class="number" id="seconds">0</span>
+            <span class="label">секунд</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Mini calendar section -->
+    <section class="section calendar-section">
+      <div class="calendar-header">
+        <h2 class="calendar-title pacifico animate-item" data-i18n="calendarTitle">Той салтанаты:</h2>
+        <p class="calendar-date lobster animate-item" data-i18n="calendarDate">24.01.2026 жыл</p>
+      </div>
+      <!-- Calendar grid for January 2026 (Monday–Sunday) -->
+      <table class="calendar-table animate-item">
+        <thead>
+          <tr>
+            <th>ПН</th>
+            <th>ВТ</th>
+            <th>СР</th>
+            <th>ЧТ</th>
+            <th>ПТ</th>
+            <th>СБ</th>
+            <th>ВС</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <!-- Highlight the wedding date -->
+            <td class="highlight-date"><span>24</span></td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+            <td>31</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Timeline showing the ceremony start time -->
+      <div class="timeline">
+        <div class="timeline-event">
+          <span class="timeline-time">19:00</span>
+          <span class="timeline-desc" data-i18n="timelineDesc">Тойдың басталуы</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photos section -->
+    <section class="section photos-section">
+      <h2 class="section-title animate-item" data-i18n="photosTitle">Біздің суреттер</h2>
+      <div class="photos">
+        <!-- Replace the placeholders with your own photos -->
+        <img
+          src="images/photo1.jpg"
+          alt="photo 1"
+          class="animate-item"
+        />
+        <img
+          src="images/photo2.jpg"
+          alt="photo 2"
+          class="animate-item"
+        />
+        <img
+          src="images/photo3.jpg"
+          alt="photo 3"
+          class="animate-item"
+        />
+      </div>
+    </section>
+
+    <!-- Map and venue section -->
+    <section class="section map-section">
+      <h2 class="section-title animate-item" data-i18n="locationTitle">Мекен‑жайымыз</h2>
+      <p class="venue-address animate-item" data-i18n="venueAddress">
+        Түркістан қаласы, Ескі Иқан ауылы, «Azizbek» тойханасы
+      </p>
+      <div class="map-container animate-item">
+        <!--
+          Using a free Google Maps embed without an API key. The search query
+          can be adjusted to match the exact venue name and address. When
+          deploying, you may replace the query with a more precise location or
+          embed code.
+        -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d781.1221226762892!2d68.52246126964101!3d43.19659397587346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDPCsDExJzQ3LjciTiA2OMKwMzEnMjMuMiJF!5e1!3m2!1sen!2sus!4v1764220102346!5m2!1sen!2sus" 
+          width="100%" height="100%"  
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <!-- <iframe
+          width="100%"
+          height="100%"
+          frameborder="0"
+          style="border:0"
+          src="https://maps.google.com/maps?q=%D0%A2%D2%AF%D1%80%D0%BA%D1%96%D1%81%D1%82%D0%B0%D0%BD%20%D2%9B%D0%B0%D0%BB%D0%B0%D1%81%D1%8B%20%D0%95%D1%81%D0%BA%D1%96%20%D0%98%D2%9B%D0%B0%D0%BD%20%D0%B0%D1%83%D1%8B%D0%BB%D1%8B%20Azizbek%20%D1%82%D0%BE%D0%B9%D1%85%D0%B0%D0%BD%D0%B0%D1%81%D1%8B&amp;output=embed"
+          allowfullscreen
+        ></iframe> -->
+      </div>
+    </section>
+
+    <!-- Host & dress code and form instructions section -->
+    <section class="section details-section">
+      <!-- Host / organiser information -->
+      <div class="host-info animate-item">
+        <h2 class="details-title pacifico" data-i18n="hostTitle">Той иесі</h2>
+        <p class="host-name lobster" data-i18n="hostName">Абдураззакова Зилуфар</p>
+      </div>
+      <!-- Dress code guidance -->
+      <div class="dress-code animate-item">
+        <h3 class="dress-title pacifico" data-i18n="dressTitle">Дресс‑код:</h3>
+        <ul class="dress-list">
+          <li class="animate-item">
+            <img src="images/tux-icon.png" alt="Tuxedo icon" class="dress-icon" />
+            <span data-i18n="dressMen">Ер адамдар: классикалық костюм</span>
+          </li>
+          <li class="animate-item">
+            <img src="images/dress-icon.png" alt="Dress icon" class="dress-icon" />
+            <span data-i18n="dressWomen">Әйел адамдар: кешкі көйлек</span>
+          </li>
+        </ul>
+      </div>
+      <!-- Message to guests -->
+      <p class="join-message caveat animate-item" data-i18n="joinMessage">Қуанышымызға ортақ болыңыздар!</p>
+    </section>
+
+    <!-- RSVP section -->
+    <section class="section rsvp-section">
+      <div class="rsvp">
+        <h2 class="animate-item" data-i18n="rsvpTitle">Қатысу формасы</h2>
+        <!-- RSVP instructions moved here -->
+        <p class="rsvp-instructions tiny5 animate-item" data-i18n="formInstructions">Төмендегі форманы толтырып тойға қатысуыңызды растауыңызды сұраймыз:</p>
+        <form id="rsvpForm" class="animate-item">
+          <!-- Name field -->
+          <div class="form-group">
+            <label for="name" data-i18n="nameLabel">Аты‑жөніңіз (Жұбыңызбен келсеңіз, есімдеріңізді бірге жазыңыз)</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <!-- Attendance radio options -->
+          <div class="form-group">
+            <label data-i18n="attendanceQuestion">Тойға келесіз бе?</label>
+            <div class="radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="Иә келемін"
+                  data-count="1"
+                  required
+                />
+                <span data-i18n="attendYes">Иә келемін</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="Иә, жұбайыммен келемін"
+                  data-count="2"
+                  required
+                />
+                <span data-i18n="attendYesWithSpouse">Иә, жұбайыммен келемін</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="Жоқ, келе алмаймын"
+                  data-count="0"
+                  required
+                />
+                <span data-i18n="attendNo">Жоқ, келе алмаймын</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Guest count with plus/minus -->
+          <div class="form-group">
+            <label for="guestCount" data-i18n="guestCountLabel">Қанша адам болып келесіз?</label>
+            <div class="number-input">
+              <button type="button" id="minus">−</button>
+              <input
+                type="text"
+                id="guestCount"
+                name="guestCount"
+                value="0"
+                readonly
+              />
+              <button type="button" id="plus">+</button>
+            </div>
+          </div>
+
+          <!-- Message box -->
+          <div class="form-group">
+            <label for="message" data-i18n="additionalMessageLabel">Қосымша хабарлама (қаласаңыз):</label>
+            <textarea id="message" name="message" data-i18n-placeholder="additionalMessagePlaceholder" placeholder="Хабарламаңызды жазуға болады..."></textarea>
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="submit" data-i18n="submitButton">Жіберу</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer-section">
+      <p data-i18n="footerMessage">Қуанышымызға ортақ болуға асыға күтеміз!</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Translations script to enable multilingual support -->
+    <script src="translations.js"></script>
+  </body>
+</html>
